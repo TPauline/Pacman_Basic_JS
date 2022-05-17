@@ -86,6 +86,26 @@ document.addEventListener('DOMContentLoaded', () => {
     gList[pacman.x][pacman.y].classList.add("pacman")
 
     function movePacman(e) {
+
+        if ((e && e.type === 'touchmove') && (xTouch || yTouch)) {
+            var xUp = e.touches[0].clientX;
+            var yUp = e.touches[0].clientY;
+            var xDiff = xTouch - xUp;
+            var yDiff = yTouch - yUp;
+            if (Math.abs(xDiff) > Math.abs(yDiff)) { /*most significant*/
+                if (xDiff > 0 && pacman.direction != "ArrowRight") /* left swipe */
+                    pacman.direction = 'ArrowLeft';
+                else if (xDiff <= 0 && pacman.direction != "ArrowLeft") /* right swipe */
+                    pacman.direction = 'ArrowRight';
+            } else {
+                if (yDiff > 0 && pacman.direction != "ArrowDown") /* up swipe */
+                    pacman.direction = 'ArrowUp';
+                else if (xDiff <= 0 && pacman.direction != "ArrowUp") /* down swipe */
+                    pacman.direction = 'ArrowDown';
+            } /* reset values */
+            xTouch = null;
+            yTouch = null;
+        }
         switch (pacman.direction) {
             case "ArrowUp":
                 if (pacman.x > 0 && !gList[pacman.x - 1][pacman.y].classList.contains("wall") && !gList[pacman.x - 1][pacman.y].classList.contains("ghost-lair") && !gList[pacman.x - 1][pacman.y].classList.contains("ghost-lair-entry")) {
@@ -181,6 +201,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+    function touchStarted(e) {
+        const initialTouch = (e.touches || e.originalEvent.touches)[0];
+        xTouch = initialTouch.clientX;
+        yTouch = initialTouch.clientY;
+    };
+
+    document.addEventListener('touchstart', touchStarted, false);
+    document.addEventListener('touchmove', movePacman, false);
 
     window.addEventListener('load', () => {
         setInterval(movePacman, 500)
