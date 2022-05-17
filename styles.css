@@ -1,0 +1,93 @@
+body {
+    background-color: rgb(1, 24, 24);
+    align-items: center;
+}
+
+.grid {
+    width: 720px;
+    height: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    margin-left: 20%;
+}
+
+.grid div {
+    width: 34.28px;
+    height: 34.28px;
+}
+
+.empty {
+    background-color: black;
+}
+
+.wall {
+    background-color: blue;
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: coral; */
+}
+
+.dots div {
+    width: 10px;
+    height: 10px;
+    background-color: wheat;
+    border-radius: 50%;
+    margin: 15px;
+}
+
+.energizers div {
+    background-color: wheat;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.ghost-lair {
+    background-color: black;
+}
+
+.ghost-lair-entry {
+    background-color: whitesmoke;
+}
+
+.pacman div {
+    background-color: yellow;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.BLINKY div {
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.PINKY div {
+    background-color: plum;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.INKY div {
+    background-color: turquoise;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.CLYDE div {
+    background-color: goldenrod;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
+}
