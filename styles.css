@@ -62,7 +62,7 @@ body {
     cursor: pointer;
     font-size: 16px;
     text-decoration: none;
-    width: auto;
+    width: 100px;
 }
 
 .grid {
@@ -173,4 +173,9 @@ body {
     width: 480px;
     margin: auto;
     position: relative
+}
+
+.moveButtons button {
+    width: 100px;
+    height: 50px;
 }
