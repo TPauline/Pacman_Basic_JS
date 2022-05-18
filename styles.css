@@ -1,6 +1,67 @@
 body {
-    background-color: rgb(1, 24, 24);
-    align-items: center;
+    /* background-color: rgb(1, 24, 24); */
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+
+.gameArea {
+    width: 720px;
+    /* height: 918px; */
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    margin: 0 auto;
+    position: relative
+}
+
+.header {
+    margin-left: 90px;
+    font-size: 30px;
+    font-family: 'Common Pixel', sans-serif;
+}
+
+.points {
+    margin-left: 140px;
+    font-size: 30px;
+    font-family: 'Common Pixel', sans-serif;
+}
+
+.top {
+    width: 720px;
+    height: 80px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.top div {
+    display: flex;
+}
+
+.bottom {
+    width: 720px;
+    height: 50px;
+    display: flex;
+    margin-top: 2px;
+}
+
+#menu {
+    background-color: black;
+    border-color: grey;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 310px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    width: auto;
 }
 
 .grid {
@@ -8,13 +69,11 @@ body {
     height: 720px;
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
-    margin-left: 20%;
 }
 
 .grid div {
-    width: 34.28px;
-    height: 34.28px;
+    width: 37.89px;
+    height: 35.28px;
 }
 
 .empty {
@@ -29,8 +88,8 @@ body {
 }
 
 .dots div {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background-color: wheat;
     border-radius: 50%;
     margin: 15px;
@@ -38,10 +97,11 @@ body {
 
 .energizers div {
     background-color: wheat;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    margin: 5px;
+    margin: auto;
+    animation: blinker 1s linear infinite;
 }
 
 .ghost-lair {
@@ -54,40 +114,55 @@ body {
 
 .pacman div {
     background-color: yellow;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin: 5px;
+    margin: auto;
 }
 
 .BLINKY div {
     background-color: red;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin: 5px;
+    margin: auto;
 }
 
 .PINKY div {
     background-color: plum;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin: 5px;
+    margin: auto;
 }
 
 .INKY div {
     background-color: turquoise;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin: 5px;
+    margin: auto;
 }
 
 .CLYDE div {
     background-color: goldenrod;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin: 5px;
+    margin: auto;
+}
+
+.scared div {
+    background-color: #0ab0f7;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: auto;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    100% {
+        opacity: 0.2;
+    }
 }
