@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = 21
     const grid = document.querySelector('.grid')
     const bottom = document.querySelector('.bottom')
-    document.body.style.zoom = "85%"
+    document.body.style.zoom = "70%"
 
     // grid.parentNode.style.marginLeft = ((window.innerWidth - 720) / 2).toString() + "px"
 
@@ -296,4 +296,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })
     document.addEventListener('keyup', (e) => { pacman.direction = e.code })
+    document.getElementById("moveup").addEventListener('click', (e) => { pacman.direction = "ArrowUp" })
+    document.getElementById("movedown").addEventListener('click', (e) => { pacman.direction = "ArrowDown" })
+    document.getElementById("moveleft").addEventListener('click', (e) => { pacman.direction = "ArrowLeft" })
+    document.getElementById("moveright").addEventListener('click', (e) => { pacman.direction = "ArrowRight" })
+
 })
